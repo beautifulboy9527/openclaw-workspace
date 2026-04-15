@@ -1,0 +1,154 @@
+# Skills URL 路由配置
+# 根据 URL 模式自动选择最佳 Skill
+
+version: "1.0"
+updated: "2026-04-15"
+
+# 路由规则：按优先级从高到低匹配
+routes:
+  # ============ 平台专用 (优先级 90-100) ============
+  
+  - name: wechat-article
+    patterns:
+      - "mp.weixin.qq.com/s/"
+      - "mp.weixin.qq.com/s?"
+    primary: wechat-article-fetcher
+    fallback:
+      - wechat-mp-reader
+      - feedgrab
+    priority: 100
+    description: "微信公众号新文章抓取"
+    
+  - name: wechat-mp-read
+    patterns:
+      - "mp.weixin.qq.com"
+    primary: wechat-mp-reader
+    fallback:
+      - feedgrab
+    priority: 95
+    description: "微信公众号文章读取（其他页面）"
+    
+  - name: twitter
+    patterns:
+      - "twitter.com/"
+      - "x.com/"
+    primary: twitter-reader
+    fallback:
+      - opencli
+      - feedgrab
+    priority: 90
+    description: "X/Twitter 内容读取"
+    
+  - name: xiaohongshu
+    patterns:
+      - "xiaohongshu.com/"
+      - "xhslink.com/"
+      - "www.xiaohongshu.com/"
+    primary: xiaohongshu-mcp
+    fallback:
+      - feedgrab
+      - opencli
+    priority: 90
+    description: "小红书内容操作"
+    
+  - name: youtube
+    patterns:
+      - "youtube.com/"
+      - "youtu.be/"
+      - "www.youtube.com/"
+    primary: youtube-downloader
+    fallback:
+      - feedgrab
+    priority: 90
+    description: "YouTube 视频下载"
+    
+  - name: douyin
+    patterns:
+      - "douyin.com/"
+      - "v.douyin.com/"
+      - "www.douyin.com/"
+    primary: douyin-video-extractor
+    fallback:
+      - feedgrab
+    priority: 90
+    description: "抖音视频提取"
+    
+  # ============ 平台支持 (优先级 80-89) ============
+  
+  - name: bilibili
+    patterns:
+      - "bilibili.com/"
+      - "b23.tv/"
+    primary: opencli
+    fallback:
+      - feedgrab
+    priority: 85
+    description: "B站内容（使用登录态）"
+    
+  - name: zhihu
+    patterns:
+      - "zhihu.com/"
+      - "zhuanlan.zhihu.com/"
+    primary: opencli
+    fallback:
+      - feedgrab
+    priority: 85
+    description: "知乎内容（使用登录态）"
+    
+  - name: weibo
+    patterns:
+      - "weibo.com/"
+      - "weibo.cn/"
+    primary: opencli
+    fallback:
+      - feedgrab
+    priority: 85
+    description: "微博内容（使用登录态）"
+    
+  - name: feishu
+    patterns:
+      - "feishu.cn/"
+      - "larksuite.com/"
+    primary: feedgrab
+    fallback:
+      - web-access
+    priority: 80
+    description: "飞书文档"
+    
+  - name: github
+    patterns:
+      - "github.com/"
+    primary: feedgrab
+    fallback:
+      - web-access
+    priority: 80
+    description: "GitHub 页面"
+    
+  # ============ 通用降级 (优先级 10) ============
+  
+  - name: default
+    patterns:
+      - "*"
+    primary: feedgrab
+    fallback:
+      - web-access
+      - agent-browser
+    priority: 10
+    description: "通用网页抓取（最后选择）"
+
+# 冲突解决规则
+conflict_resolution:
+  # 当多个规则匹配时：
+  # 1. 选择优先级最高的
+  # 2. 如果优先级相同，选择 patterns 更精确的
+  # 3. 如果还是相同，按定义顺序选择第一个
+
+# 禁止规则：某些 Skill 不应该在特定场景使用
+exclusions:
+  - skill: web-access
+    reason: "通用浏览器，仅作为最后降级选项"
+    when_primary_has: ["wechat-article-fetcher", "twitter-reader", "feedgrab"]
+    
+  - skill: agent-browser
+    reason: "需要显式启动浏览器自动化"
+    auto_route: false  # 不自动路由到这个 Skill
