@@ -1,0 +1,41 @@
+# 敏感配置
+config/
+*.env
+*.secret
+*_secret.*
+
+# API Keys
+API-KEYS.md
+TOOLS.md
+
+# 缓存和临时文件
+__pycache__/
+*.pyc
+.cache/
+*.log
+
+# 备份
+skills-backup/
+backup*/
+*.bak
+
+# 数据文件
+*.json
+!config/alerts.json
+!config/portfolio.json
+
+# 输出目录
+outputs/
+
+# IDE
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 测试结果
+analysis_result.json
+valuation_result.json
+financial_analysis.json
