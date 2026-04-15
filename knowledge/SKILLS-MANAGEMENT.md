@@ -1,7 +1,7 @@
 # Skills 规范化管理方案
 
 > 基于 Anthropic/OpenAI 官方最佳实践
-> 更新时间：2026-04-15
+> 更新时间：2026-04-15 15:45
 
 ---
 
@@ -10,12 +10,21 @@
 | 统计项 | 数量 |
 |--------|------|
 | **Skills 总数** | 71 |
-| **有 SKILL.md** | 待统计 |
-| **符合规范** | 待统计 |
+| **有 SKILL.md** | 71 |
+| **已添加 Gotchas** | 4 |
+| **已添加测试** | 3 |
 
 ---
 
-## 🗂️ 规范化分类
+## ✅ 已规范化 Skills
+
+| Skill | Gotchas | 测试 | 仓库 |
+|-------|---------|------|------|
+| unified-finance-skill | ✅ | ✅ | [GitHub](https://github.com/beautifulboy9527/unified-finance-skill) |
+| bggg-skill-taotie | ✅ | ✅ | [GitHub](https://github.com/beautifulboy9527/bggg-skill-taotie) |
+| wechat-article-fetcher | ✅ | ✅ | [GitHub](https://github.com/beautifulboy9527/wechat-article-fetcher) |
+| agent-browser | ✅ | ✅ | [GitHub](https://github.com/beautifulboy9527/agent-browser-skill) |
+| knowledge-manager | ✅ | ✅ | [GitHub](https://github.com/beautifulboy9527/knowledge-manager) |
 
 ### 1. 核心金融 (Core Finance) - 10 个
 
