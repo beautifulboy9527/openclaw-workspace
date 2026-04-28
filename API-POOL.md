@@ -1,12 +1,51 @@
 
 # LLM API 号池
 
-**更新时间**: 2026-04-15 14:00  
+**更新时间**: 2026-04-28  
 **状态**: ✅ = 可用，⚠️ = 限速保留，❌ = 不可用
 
 ---
 
 ## ✅ 可用 API
+
+### 0. Alaya Code lite 🆕[new]
+
+| 配置项 | 值 |
+|--------|-----|
+| **API Key** | `sk-6Z9ulMIOLS3VT6jP087490D02e93405591BdD9Cc061133Be` |
+| **Base URL** | `https://codingplan.alayanew.com/v1` |
+| **模型** | kimi-k2.5, minimax-m2.1, minimax-m2.5 |
+| **到期时间** | 2026-05-05 |
+| **状态** | ✅ 测试通过 |
+| **测试时间** | 2026-04-28 |
+
+---
+
+### 0. Minimax Plus (22号到期) 🆕[new]
+
+| 配置项 | 值 |
+|--------|-----|
+| **API Key** | `sk-cp-zAhhrL76V16K0ae6w3dY76VZVAP62Tlh_-S_xb3UNt3m9yeoKhlvBrumIxowUZCzI_NySjgH9IrIYT8cueci1unqDKMt0Cweu13wUw9QuJyEcBRQfI-rm6o` |
+| **Base URL** | `https://api.minimax.chat/v1` |
+| **模型** | MiniMax-M2.5 |
+| **到期时间** | 2026-05-22 |
+| **状态** | ✅ 测试通过 |
+| **测试时间** | 2026-04-27 |
+
+---
+
+### 0. Minimax Plus (29号到期) 🆕[new]
+
+| 配置项 | 值 |
+|--------|-----|
+| **API Key** | `sk-cp-rpp2J23XAdTjE2kHyeauE1jVTXDnvIqyGt5YIPcVX4Hr9Tk5D6h-6M-dbAOhRnBH0cS_KUOau6LQWDibIyesEdgc0a7Oiqx5gKRzsXWsN8KPZU3GKTFIt-k` |
+| **Base URL** | `https://api.minimax.chat/v1` |
+| **模型** | MiniMax-M2.5 |
+| **到期时间** | 2026-05-29 |
+| **状态** | ✅ 测试通过 |
+| **测试时间** | 2026-04-27 |
+
+---
 
 ### 1. smew.ai (GPT-5.4) 🆕
 
@@ -232,6 +271,13 @@
 | dd999.uk | 401 未授权 | `7d91e5e455ac433bb4f7541ee5a0c6dc` |
 | fengying.xin | 401 未授权 | 10次/分钟限制 |
 | 天翼云 GLM pro | 400 参数错误 | `cp_eceeebd6596e48eeb646209d1c111c0e` |
+| yhzwj.top | 401 认证失败 | 2026-04-28 |
+| 京东 GLM-5 (新) | 404 模型不存在 | `pk-3900a8f0` |
+| 讯飞 Coding Plan (新) | 500 服务器错误 | 2026-04-28 |
+| Z.AI | 连接失败 | api.z-ai.cn |
+| kimi-k2.6 (3个) | 404 Not Found | 模型可能未上线 |
+| 小米 Pro | 400 错误 | `tp-s5ttpgnqvullr0b1bbbs8wcq` |
+| 阿里云百炼 | 401 认证错误 | `sk-sp-1419821711ac4f3e817238ed47b5e21f` |
 
 ---
 
