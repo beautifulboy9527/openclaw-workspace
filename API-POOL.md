@@ -1,12 +1,26 @@
 
 # LLM API 号池
 
-**更新时间**: 2026-04-28  
+**更新时间**: 2026-04-29  
 **状态**: ✅ = 可用，⚠️ = 限速保留，❌ = 不可用
 
 ---
 
 ## ✅ 可用 API
+
+### 0. 小米 Pro (主力) 🆕[new]
+
+| 配置项 | 值 |
+|--------|-----|
+| **API Key** | `tp-cyrb6l2r6uhqs1jq6evxemf0tii215zvhgik4f4an94ng4fq` |
+| **Base URL** | `https://token-plan-cn.xiaomimimo.com/v1` |
+| **模型** | mimo-v2.5-pro, mimo-v2.5, mimo-v2-pro, mimo-v2-omni |
+| **到期时间** | 2026-05-29 (约1个月) |
+| **状态** | ✅ 测试通过 |
+| **测试时间** | 2026-04-29 |
+| **备注** | 可作为主力模型 |
+
+---
 
 ### 0. Alaya Code lite 🆕[new]
 
